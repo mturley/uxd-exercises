@@ -8,12 +8,56 @@ Thanks for taking the time to read my responses!  I hope my efforts to produce r
 
 ---
 
+# HEY! I'M NOT DONE YET.
+
+Wow, you found this really early... hold on a few hours! I'm still working on it.
+
+---
+
 ## Open Ended Questions
 
----
+### Section 1 - Design & Development
 
-// TODO
+#### Q1
 
-Wow, you found this really early... hold on a few hours!  I'm still working on it.
+> Could you outline what you would consider to be the important considerations If you were
+asked to develop a web application that could potentially be used by thousands of users?
 
----
+TODO: ANSWER!
+
+#### Q2
+
+> What techniques do you employ to keep up-to-date with the rapid pace of progress in the
+field of frontend development? How do you choose which technologies are worth taking the
+time to learn more about?
+
+TODO: ANSWER!
+
+### Section 2 - Testing & Deployment
+
+#### Q1
+
+> Describe the approach you take in testing your applications.
+
+TODO: ANSWER!
+
+#### Q2
+
+> What do you value in a code base?
+
+TODO: ANSWER!
+
+### Section 3 - General
+
+#### Q1
+
+> What do you find most exciting or interesting about working in the software development
+field?
+
+TODO: ANSWER!
+
+#### Q2
+
+> In your career to date, what are you most proud of and why?
+
+TODO: ANSWER!
