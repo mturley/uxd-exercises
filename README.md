@@ -1,6 +1,6 @@
 # UXD Exercises
 
-### Prepared 2017-09-10 by Michael J. Turley
+### Prepared 2017-09-10 by Mike Turley
 
 This document is written with markdown and intended to be read in its HTML-rendered form. If you are reading the raw text of the README.md file, you should [read it on github.com](https://github.com/mturley/uxd-exercises) instead!
 
@@ -61,3 +61,39 @@ TODO: ANSWER!
 > In your career to date, what are you most proud of and why?
 
 TODO: ANSWER!
+
+## Practical Exercises
+
+### Exercise 1
+
+The buggy code provided in the PDF is included at `ex1/remoteMathService-buggy.js`, and my solution code is located at `ex1/remoteMathService-fixed.js`. To run and verify the tests, use the following commands:
+
+```
+cd ex1
+mocha test/test-buggy.js # TODO VALIDATE THESE COMMANDS AFTER WRITING THE TESTS
+mocha test/test-fixed.js
+```
+
+### Exercise 2
+
+My solution HTML and CSS for this exercise are located at `ex2/box.html` and `ex2/box.css` respectively. You can simply view the `box.html` file in a browser directly from your local filesystem, or point a web server at it.
+
+I have copied the requirements for this exercise from the PDF to `ex2/REQUIREMENTS.md` for reference.
+
+### Exercise 3
+
+The `ex3` subdirectory is an **[npm](https://www.npmjs.com/)** package containing a small web application built with the following stack:
+
+* Web UI implemented in JavaScript with **[React](https://facebook.github.io/react/)**
+* REST API implemented in JavaScript with **[Node.js](https://nodejs.org/en/)** and **[Express](https://expressjs.com/)**
+* **[SQLite](https://www.sqlite.org/)** for a database
+* Compiled, Bundled and Packaged with **[Babel](https://babeljs.io/)**, **[Webpack](https://webpack.js.org/)** and **[npm](https://www.npmjs.com/)**, respectively.
+
+I decided to use these tools in my stack because:
+
+* **React** is reliable, maintainable, declarative, expressive, easy, powerful, and hip right now.
+* **Babel** allows me to use modern ES6+ syntax and JSX support, compiling these into plain JavaScript for support in all browsers.
+* **Node.js** and **Express** are easy choices for a quick-and-dirty minimalist webapp, they meet the needs of the exercise, and they offer the convenience of writing the whole thing front-to-back in one language.
+* **SQLite** makes for a small and simple database, it is easy to spin up locally, and SQL fits because the data in this exercise is relational. On another project, I might use a different SQL database for relational data or a different database entirely if the data is not relational. I considered MongoDB for this project for ease of use, but SQLite was a better fit.
+* **Webpack** makes for a very convenient deployment artifact, is becoming the standard for modern web app bundling, and provides fancy development tools that I enjoy using.
+* **npm** comes along with using Node, and it provides a dead-simple `scripts` option in `package.json` for adding build tasks to your Node project without needing the bulk of additional build tools like Gulp, Grunt, or Maven.
