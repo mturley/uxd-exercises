@@ -74,6 +74,10 @@ mocha test/test-buggy.js # TODO VALIDATE THESE COMMANDS AFTER WRITING THE TESTS
 mocha test/test-fixed.js
 ```
 
+I took the following steps in debugging this code:
+
+* Removed all the `return` statements, because none of the return values were actually being used (`remoteMathService()`'s return value is never used, and in fact can't be, because it must become asynchronous code, and the return value of the callback `cb` passed to `callOneService` and `callTwoService` is only used as the return value in the setTimeout callbacks of these functions, where it doesn't go anywhere). The real data we want here can only be accessed asynchronously, so without some kind of promise pattern or other purpose, these synchronous returns are just confusing here.
+
 ### Exercise 2
 
 My solution HTML and CSS for this exercise are located at `ex2/box.html` and `ex2/box.css` respectively. You can simply view the `box.html` file in a browser directly from your local filesystem, or point a web server at it.

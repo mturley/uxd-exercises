@@ -7,8 +7,6 @@
 
  */
 
-// TODO ACTUALLY FIX IT
-
 function remoteMathService(cb) {
   var one, two;
   callOneService(function(err, num) {
@@ -17,18 +15,18 @@ function remoteMathService(cb) {
   callTwoService(function(err, num) {
     two = num;
   });
-  return cb(undefined, one + two);
+  cb(undefined, one + two);
 }
 
 function callOneService(cb) {
   setTimeout(function() {
-    return cb(undefined, 1);
+    cb(undefined, 1);
   }, 1000);
 }
 
 function callTwoService(cb) {
   setTimeout(function() {
-    return cb(undefined, 2);
+    cb(undefined, 2);
   }, 1500);
 }
 
