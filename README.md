@@ -79,6 +79,7 @@ I took the following steps in debugging this code:
 * Removed all the `return` statements, because none of the return values were actually being used (`remoteMathService()`'s return value is never used, and in fact can't be, because it must become asynchronous code, and the return value of the callback `cb` passed to `callOneService` and `callTwoService` is only used as the return value in the setTimeout callbacks of these functions, where it doesn't go anywhere). The real data we want here can only be accessed asynchronously, so without some kind of promise pattern or other purpose, these synchronous returns are just confusing here.
 * Moved the `cb(undefined, one + two)` call into a new inner helper function `doMath`, since we'll need to call it in both service callbacks.
 * Added the condition to check if both numbers are defined before doing math, renamed the helper to `doMathIfReady`, and moved the helper call into the handlers for `callOneService` and `callTwoService` after each number variable is assigned. Also assigned `null` to `one` and `two` by default and checked for non-null instead of undefined to make the check more explicit. This fixes the bug, and we get "correct" output.
+* This code begs for the Promises pattern, so I didn't stop there... I made a copy of the file at `ex1/remoteMathService-promises.js` to rewrite my solution using Promises.
 
 ### Exercise 2
 
