@@ -80,6 +80,7 @@ I took the following steps in debugging this code:
 * Moved the `cb(undefined, one + two)` call into a new inner helper function `doMath`, since we'll need to call it in both service callbacks.
 * Added the condition to check if both numbers are defined before doing math, renamed the helper to `doMathIfReady`, and moved the helper call into the handlers for `callOneService` and `callTwoService` after each number variable is assigned. Also assigned `null` to `one` and `two` by default and checked for non-null instead of undefined to make the check more explicit. This fixes the bug, and we get "correct" output.
 * This code begs for the Promises pattern, so I didn't stop there... I made a copy of the file at `ex1/remoteMathService-promises.js` to rewrite my solution using Promises.
+* I got rid of the non-null check, we can use Promises to simply wait until we get back from both service callbacks to proceed to the final answer callback using `Promise.all().then()`. So I convert each call*Service call into a Promise and use Promise.all to call them both. This once again runs and gets us "correct" output, but it's got a little code duplication in the two promises.
 
 ### Exercise 2
 

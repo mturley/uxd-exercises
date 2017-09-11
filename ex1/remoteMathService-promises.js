@@ -8,19 +8,21 @@
  */
 
 function remoteMathService(cb) {
-  var one = null, two = null;
-  var doMathIfReady = function() {
-    if (one !== null && two !== null) {
-      cb(undefined, one + two);
-    }
-  };
-  callOneService(function(err, num) {
-    one = num;
-    doMathIfReady();
+  var one, two;
+  var callOnePromise = new Promise(function(resolve, reject) {
+    callOneService(function(err, num) {
+      one = num;
+      err ? reject() : resolve();
+    });
   });
-  callTwoService(function(err, num) {
-    two = num;
-    doMathIfReady();
+  var callTwoPromise = new Promise(function(resolve, reject) {
+    callTwoService(function(err, num) {
+      two = num;
+      err ? reject() : resolve();
+    });
+  });
+  Promise.all([callOnePromise, callTwoPromise]).then(function() {
+    cb(undefined, one + two);
   });
 }
 
