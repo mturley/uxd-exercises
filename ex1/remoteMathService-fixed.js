@@ -8,17 +8,20 @@
  */
 
 function remoteMathService(cb) {
-  var one, two;
-  var doMath = function() {
-    cb(undefined, one + two);
+  var one = null, two = null;
+  var doMathIfReady = function() {
+    if (one !== null && two !== null) {
+      cb(undefined, one + two);
+    }
   };
   callOneService(function(err, num) {
     one = num;
+    doMathIfReady();
   });
   callTwoService(function(err, num) {
     two = num;
+    doMathIfReady();
   });
-  doMath();
 }
 
 function callOneService(cb) {
