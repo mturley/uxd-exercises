@@ -77,6 +77,7 @@ mocha test/test-fixed.js
 I took the following steps in debugging this code:
 
 * Removed all the `return` statements, because none of the return values were actually being used (`remoteMathService()`'s return value is never used, and in fact can't be, because it must become asynchronous code, and the return value of the callback `cb` passed to `callOneService` and `callTwoService` is only used as the return value in the setTimeout callbacks of these functions, where it doesn't go anywhere). The real data we want here can only be accessed asynchronously, so without some kind of promise pattern or other purpose, these synchronous returns are just confusing here.
+* Moved the `cb(undefined, one + two)` call into a new inner helper function `doMath`, since we'll need to call it in both service callbacks.
 
 ### Exercise 2
 

@@ -9,13 +9,16 @@
 
 function remoteMathService(cb) {
   var one, two;
+  var doMath = function() {
+    cb(undefined, one + two);
+  };
   callOneService(function(err, num) {
     one = num;
   });
   callTwoService(function(err, num) {
     two = num;
   });
-  cb(undefined, one + two);
+  doMath();
 }
 
 function callOneService(cb) {
