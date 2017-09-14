@@ -87,7 +87,7 @@ I took the following steps in debugging this code. If you are curious, I contain
 * [a0375af](https://github.com/mturley/uxd-exercises/commit/a0375af8f08a79a7cf5b6695faf24589b3eaf37b): I got rid of `doMathIfReady`, we can use Promises to simply wait until we get back from both service callbacks to proceed to the final answer callback. So I converted each service call into a Promise and used `Promise.all().then()` to call them both and handle both results. This once again runs and gets us "correct" output, but it's got a little code duplication in the two promises.
 * [8816611](https://github.com/mturley/uxd-exercises/commit/881661131c7d8ec0730fe4280aab48f8344387f3): To be a little more [DRY](http://wiki.c2.com/?DontRepeatYourself), I moved the `new Promise` into a single `callServicePromise` helper that takes one of the two services as an argument and returns a promise that resolves with the number from that service. This also means we don't need to store the resulting numbers in local variables anymore, we can just use the value passed to each `resolve()` in our `then()` handler. So I removed `var one, two` and, calling my `callServicePromise` helper with each service, we get `one` and `two` out as `result[0]` and `result[1]`. Once again "correct".
 * I could keep going, and make the two services themselves return Promises to make this all easier, but I think I've made my point, so I'll stop here... it's just `1 + 2 === 3` after all.
-* Added unit tests (involved giving each remoteMathService file a `module.exports` declaration)
+* [95526dd](https://github.com/mturley/uxd-exercises/commit/95526dd61dd9f4b20602997c542f5d293d56c78a) Added unit tests (involved giving each remoteMathService file a `module.exports` declaration)
 
 ### Exercise 2
 
