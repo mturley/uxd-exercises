@@ -3,9 +3,47 @@
 <html>
   <head>
     <title>Exercise 2 - Vanilla CSS</title>
+    <link rel="stylesheet" href="box.css" type="text/css" />
     <!-- TODO you might want some stylesheets or whatever -->
   </head>
   <body>
-    <h1>Hello, World!</h1><!-- TODO You know, the thing -->
+    <div id="panel">
+      <header>
+        <h1>OpenShift</h1>
+        <ul>
+          <li>Item</li>
+          <li>Item</li>
+          <li>Item</li>
+        </ul>
+      </header>
+      <div id="panel-body">
+
+        <h2>Panel content</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adispisicing elit, sed do eiusmod
+          tempor incididunt esse cillum dolore eu deserunt mollit anim id est laborum.
+        </p>
+
+        <table>
+          <tr>
+            <td class="field">Case ID:</td>
+            <td>Case0002b</td>
+          </tr>
+          <tr>
+            <td class="field">Case Name:</td>
+            <td>Development case instance</td>
+          </tr>
+          <tr>
+            <td class="field">Status:</td>
+            <td><span class="tag active">Active</span></td>
+          </tr>
+          <tr>
+            <td class="field">State:</td>
+            <td>Started on March 16th, 2017</td>
+          </tr>
+        </table>
+
+      </div> <!-- #panel-body -->
+    </div> <!-- #panel -->
   </body>
 </html>

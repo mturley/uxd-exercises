@@ -1,1 +1,47 @@
-/* TODO implement CSS */
+
+/* TODO get nav shadows just right */
+
+@import url('https://fonts.googleapis.com/css?family=Overpass');
+
+body {
+  font-family: 'Overpass', sans-serif;
+
+  /* NOTE: Yes I did use an external tool to generate the radial gradient CSS.  Gradients can be ridiculous. */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,bbbbbb+50 */
+  background: #eeeeee; /* Old browsers */
+  background: -moz-radial-gradient(top, ellipse cover, #eeeeee 0%, #bbbbbb 50%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(top, ellipse cover, #eeeeee 0%, #bbbbbb 50%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at top, #eeeeee 0%, #bbbbbb 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#bbbbbb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+p {
+  font-size: 16px;
+}
+
+#panel {
+  width: 556px;
+  text-align: left;
+  margin: 150px auto;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.2);
+}
+
+#panel header {
+
+}
+
+#panel-body {
+  padding: 15px;
+}
