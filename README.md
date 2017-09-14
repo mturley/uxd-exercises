@@ -68,13 +68,15 @@ TODO: ANSWER!
 
 The bug in this code is that it tries to use the results of the two number services immediately (synchronously), but the services are asynchronous, they don't return their values right away. So the results need to handled in the callbacks themselves, after "loading" the numbers. I made a simple fix that involves checking to see if both numbers are ready after each is loaded and conditionally triggering the math, and then I went further to implement a better solution using Promises.
 
-The buggy code provided in the PDF is included at `ex1/remoteMathService-buggy.js`, and my solution code is located at `ex1/remoteMathService-fixed.js` and `ex1/remoteMathService-promises.js`. To run and verify the tests, use the following commands:
+The buggy code provided in the PDF is included at `ex1/remoteMathService-buggy.js`, and my solution code is located at `ex1/remoteMathService-fixed.js` and `ex1/remoteMathService-promises.js`. Mocha unit tests are located at `ex1/test/test.js`. The `ex1` directory is an npm package, just so that it can depend on mocha and have a `test` script for convenience. To run and verify the tests:
 
 ```
 cd ex1
-mocha test/test-buggy.js # TODO VALIDATE THESE COMMANDS AFTER WRITING THE TESTS
-mocha test/test-fixed.js
+npm install
+npm test
 ```
+
+Note that the first unit test checks for the presence of the bug (i.e. the test will pass if the code is buggy in the expected way), rather than being a test of the desired result which would fail if the code is buggy.  This way, all tests should pass in `ex1`.
 
 I took the following steps in debugging this code. If you are curious, I contained the changes for each of these steps in its own commit, and I'll leave links to each commit in the list.
 
@@ -85,6 +87,7 @@ I took the following steps in debugging this code. If you are curious, I contain
 * [a0375af](https://github.com/mturley/uxd-exercises/commit/a0375af8f08a79a7cf5b6695faf24589b3eaf37b): I got rid of `doMathIfReady`, we can use Promises to simply wait until we get back from both service callbacks to proceed to the final answer callback. So I converted each service call into a Promise and used `Promise.all().then()` to call them both and handle both results. This once again runs and gets us "correct" output, but it's got a little code duplication in the two promises.
 * [8816611](https://github.com/mturley/uxd-exercises/commit/881661131c7d8ec0730fe4280aab48f8344387f3): To be a little more [DRY](http://wiki.c2.com/?DontRepeatYourself), I moved the `new Promise` into a single `callServicePromise` helper that takes one of the two services as an argument and returns a promise that resolves with the number from that service. This also means we don't need to store the resulting numbers in local variables anymore, we can just use the value passed to each `resolve()` in our `then()` handler. So I removed `var one, two` and, calling my `callServicePromise` helper with each service, we get `one` and `two` out as `result[0]` and `result[1]`. Once again "correct".
 * I could keep going, and make the two services themselves return Promises to make this all easier, but I think I've made my point, so I'll stop here... it's just `1 + 2 === 3` after all.
+* Added unit tests (involved giving each remoteMathService file a `module.exports` declaration)
 
 ### Exercise 2
 
