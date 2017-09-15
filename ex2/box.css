@@ -1,22 +1,18 @@
 
-/* TODO get nav shadows just right */
-
-@import url('https://fonts.googleapis.com/css?family=Overpass');
+@import url('https://fonts.googleapis.com/css?family=Overpass:300,400');
 
 body {
-  font-family: 'Overpass', sans-serif;
-
-  /* NOTE: Yes I did use an external tool to generate the radial gradient CSS.  Gradients can be ridiculous. */
+  /* NOTE: Yes I did use a tool to generate the radial gradient CSS. Gradients can be a pain, I decided not to waste time on it. */
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,bbbbbb+50 */
-  background: #eeeeee; /* Old browsers */
-  background: -moz-radial-gradient(top, ellipse cover, #eeeeee 0%, #bbbbbb 50%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(top, ellipse cover, #eeeeee 0%, #bbbbbb 50%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at top, #eeeeee 0%, #bbbbbb 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#bbbbbb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+  background: #ededed; /* Old browsers */
+  background: -moz-radial-gradient(top, ellipse cover, #ededed 0%, #bbb 50%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(top, ellipse cover, #ededed 0%, #bbb 50%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at top, #ededed 0%, #bbb 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#bbb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   width: 100%;
   height: 100%;
   text-align: center;
+  font-family: 'Overpass', sans-serif;
 }
 
 h2 {
@@ -28,20 +24,137 @@ p {
 }
 
 #panel {
-  width: 556px;
+  max-width: 556px;
   text-align: left;
   margin: 150px auto;
-  border: 1px solid #ffffff;
-  background-color: #ffffff;
+  border: 1px solid #fff;
+  background-color: #fff;
   -webkit-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.2);
   box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.2);
 }
 
 #panel header {
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c00c00+0,470000+100 */
+  background: #c00c00; /* Old browsers */
+  background: -moz-linear-gradient(top, #c00c00 0%, #470000 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #c00c00 0%, #470000 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #c00c00 0%, #470000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c00c00', endColorstr='#470000',GradientType=0 ); /* IE6-9 */
+  color: #fff;
+}
 
+#panel header h1 {
+  float: left;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  margin: 0;
+  padding: 10px 16px;
+}
+
+#panel header h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#panel header ul {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+#panel header ul li {
+  float: right;
+  border-left: 1px solid #c46d6c;
+  transition: all 0.5s;
+}
+
+#panel header ul li a {
+  display: inline-block;
+  padding: 10px 16px;
+  margin: 0;
+  color: #fcfcfc;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+#panel header ul li:hover, #panel header ul li:active {
+  -webkit-box-shadow: inset 0px 0px 16px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: inset 0px 0px 16px 0px rgba(0,0,0,0.5);
+  box-shadow: inset 0px 0px 16px 0px rgba(0,0,0,0.5);
+}
+
+#panel header ul li:hover a, #panel header ul li:active a {
+  opacity: 1;
 }
 
 #panel-body {
-  padding: 15px;
+  padding: 16px;
+}
+
+#panel-body h2 {
+  margin: 0;
+}
+
+#panel-body table {
+  font-size: 16px;
+}
+
+#panel-body table tr td.field {
+  padding: 8px 64px 8px 0;
+}
+
+#panel-body table tr td.value {
+  font-weight: 300;
+}
+
+#panel .tag {
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 3px;
+}
+
+#panel .tag.active {
+  color: #fff;
+  background-color: #008000;
+}
+
+
+/* A mobile-first CSS framework might have been nicer, but here's a quick-and-dirty mobile-last fix. */
+@media only screen and (max-width: 350px) {
+  body, #panel {
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  #panel header h1 {
+    float: none;
+  }
+
+  #panel header ul {
+    width: 100%;
+  }
+
+  #panel header ul li {
+    width: 100%;
+    float: none;
+    border-top: 1px solid #c46d6c;
+  }
+
+  #panel header ul li a {
+    width: 100%;
+  }
+
+  #panel-body table tr td.field {
+    padding: 8px 16px 8px 0;
+  }
 }
