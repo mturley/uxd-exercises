@@ -64,7 +64,7 @@ TODO: ANSWER!
 
 ## Practical Exercises
 
-### Exercise 1
+### Exercise 1 - Debugging Async Code
 
 The bug in this code is that it tries to use the results of the two number services immediately (synchronously), but the services are asynchronous, they don't return their values right away. So the results need to handled in the callbacks themselves, after "loading" the numbers. I made a simple fix that involves checking to see if both numbers are ready after each is loaded and conditionally triggering the math, and then I went further to implement a better solution using Promises.
 
@@ -89,15 +89,15 @@ I took the following steps in debugging this code. If you are curious, I contain
 * I could keep going, and make the two services themselves return Promises to make this all easier, but I think I've made my point, so I'll stop here... it's just `1 + 2 === 3` after all.
 * [95526dd](https://github.com/mturley/uxd-exercises/commit/95526dd61dd9f4b20602997c542f5d293d56c78a): Added unit tests (involved giving each remoteMathService file a `module.exports` declaration)
 
-### Exercise 2
+### Exercise 2 - Vanilla CSS
 
-My solution HTML and CSS for this exercise are located at `ex2/box.html` and `ex2/box.css` respectively. You can simply view the `box.html` file in a browser directly from your local filesystem, or point a web server at it.
+My solution HTML and CSS for this exercise are located at `ex2/box.html` and `ex2/box.css`. You can simply view the `box.html` file in a browser directly from your local filesystem, or point a web server at it.
 
-The page is fully responsive, a CSS media query changes some styles at screen widths below 450px. Shrink your browser window to see the "mobile mode" of the page.
+The page is fully responsive, a CSS media query changes some styles at screen widths below 450px. Shrink your browser window or use the Chrome Dev Tools "Device Mode" to see the "mobile version" of the page.
 
 I have copied the requirements for this exercise from the PDF to `ex2/REQUIREMENTS.md` for reference. I have also provided screenshots of my solution in both desktop and mobile modes at `ex2/box-screenshot-desktop.png` and `ex2/box-screenshot-mobile.png`.
 
-### Exercise 3
+### Exercise 3 - Sample Project
 
 The `ex3` subdirectory is an **[npm](https://www.npmjs.com/)** package containing a small web application built with the following stack:
 
