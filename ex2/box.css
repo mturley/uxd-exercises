@@ -130,7 +130,7 @@ p {
 
 
 /* A mobile-first CSS framework might have been nicer, but here's a quick-and-dirty mobile-last fix. */
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 450px) {
   body, #panel {
     margin: 0;
     overflow-x: hidden;
