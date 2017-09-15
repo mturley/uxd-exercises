@@ -93,7 +93,9 @@ I took the following steps in debugging this code. If you are curious, I contain
 
 My solution HTML and CSS for this exercise are located at `ex2/box.html` and `ex2/box.css` respectively. You can simply view the `box.html` file in a browser directly from your local filesystem, or point a web server at it.
 
-I have copied the requirements for this exercise from the PDF to `ex2/REQUIREMENTS.md` for reference.
+The page is fully responsive, a CSS media query changes some styles at screen widths below 450px. Shrink your browser window to see the "mobile mode" of the page.
+
+I have copied the requirements for this exercise from the PDF to `ex2/REQUIREMENTS.md` for reference. I have also provided screenshots of my solution in both desktop and mobile modes at `ex2/box-screenshot-desktop.png` and `ex2/box-screenshot-mobile.png`.
 
 ### Exercise 3
 
