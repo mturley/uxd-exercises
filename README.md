@@ -91,7 +91,7 @@ I took the following steps in debugging this code. If you are curious, I contain
 
 ### Exercise 2 - Vanilla CSS
 
-My solution HTML and CSS for this exercise are located at `ex2/box.html` and `ex2/box.css`. You can simply view the `box.html` file in a browser directly from your local filesystem, or point a web server at it.
+My solution HTML and CSS for this exercise are located at `ex2/box.html` and `ex2/box.css`. You can simply view the `box.html` file in a browser directly from your local filesystem, or you can view it on Github Pages at https://mturley.github.io/uxd-exercises/ex2/box.html.
 
 The page is fully responsive, a CSS media query changes some styles at screen widths below 450px. Shrink your browser window or use the Chrome Dev Tools "Device Mode" to see the "mobile version" of the page.
 
