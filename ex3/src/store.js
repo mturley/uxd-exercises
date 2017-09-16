@@ -3,10 +3,10 @@ import { browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import freeze from 'redux-freeze';
-import { reducers } from './reducers/index';
+import reducers from './reducers/index';
 
 // add the middlewares
-let middlewares = [];
+const middlewares = [];
 
 // add the router middleware
 middlewares.push(routerMiddleware(browserHistory));
@@ -23,8 +23,8 @@ if (process.env.NODE_ENV !== 'production') {
 let middleware = applyMiddleware(...middlewares);
 
 // add the redux dev tools
-if (process.env.NODE_ENV !== 'production' && window.devToolsExtension) {
-  middleware = compose(middleware, window.devToolsExtension());
+if (process.env.NODE_ENV !== 'production' && window.devToolsExtension) { // eslint-disable-line no-undef
+  middleware = compose(middleware, window.devToolsExtension()); // eslint-disable-line no-undef
 }
 
 // create the store

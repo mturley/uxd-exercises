@@ -9,6 +9,10 @@ import {
 } from 'material-ui/Table';
 
 export default class UsersTable extends Component {
+  componentDidMount() {
+    console.log('Did Mount!', this.props, this.state);
+  }
+
   render() {
     return (
       <Table>
