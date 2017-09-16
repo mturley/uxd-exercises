@@ -122,3 +122,4 @@ I took the following steps in building this application:
 
 * [6b09de3](https://github.com/mturley/uxd-exercises/commit/6b09de337e73f5e258836644ab0d1721c91a4b6d): Discarded an initial create-react-app project and used a more modest [redux-minimal](https://redux-minimal.js.org/) template for a React/Redux "Hello World".
 * [cde2526](https://github.com/mturley/uxd-exercises/commit/cde2526ea9661f2a5cee33b7a21bdbe29c239e6f): Removed some more stuff that we don't really need here that came with redux-minimal, including the Bootstrap CSS framework (I prefer to use alternatives so the whole web doesn't look like Bootstrap).
+* []()

@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import AppBar from 'material-ui/AppBar';
 
 // Home page component
 export default class Home extends React.Component {
@@ -6,7 +7,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div className="page-home">
-        <h4>Hello world! What shall we use for CSS?</h4>
+        <AppBar title="Users" />
       </div>
     );
   }

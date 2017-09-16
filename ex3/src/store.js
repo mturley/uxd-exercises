@@ -1,10 +1,9 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import { browserHistory } from "react-router";
-import { syncHistoryWithStore, routerMiddleware } from "react-router-redux";
-import createSagaMiddleware from "redux-saga";
-import freeze from "redux-freeze";
-import { reducers } from "./reducers/index";
-import { sagas } from "./sagas/index";
+import { createStore, applyMiddleware, compose } from 'redux';
+import { browserHistory } from 'react-router';
+import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
+import thunk from 'redux-thunk';
+import freeze from 'redux-freeze';
+import { reducers } from './reducers/index';
 
 // add the middlewares
 let middlewares = [];
@@ -12,9 +11,8 @@ let middlewares = [];
 // add the router middleware
 middlewares.push(routerMiddleware(browserHistory));
 
-// add the saga middleware
-const sagaMiddleware = createSagaMiddleware();
-middlewares.push(sagaMiddleware);
+// add the thunk middleware
+middlewares.push(thunk);
 
 // add the freeze dev middleware
 if (process.env.NODE_ENV !== 'production') {
@@ -32,7 +30,6 @@ if (process.env.NODE_ENV !== 'production' && window.devToolsExtension) {
 // create the store
 const store = createStore(reducers, middleware);
 const history = syncHistoryWithStore(browserHistory, store);
-sagaMiddleware.run(sagas);
 
 // export
 export { store, history };
