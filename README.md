@@ -121,4 +121,4 @@ I find the above stack to be an elegant and performant solution to the needs of 
 I took the following steps in building this application:
 
 * [6b09de3](https://github.com/mturley/uxd-exercises/commit/6b09de337e73f5e258836644ab0d1721c91a4b6d): Discarded an initial create-react-app project and used a more modest [redux-minimal](https://redux-minimal.js.org/) template for a React/Redux "Hello World".
-* []()
+* [105965d](https://github.com/mturley/uxd-exercises/commit/105965d4dd1e533bf54a29951d9c54bc5ac7eacb): Removed some more stuff that we don't really need here that came with redux-minimal, including the Bootstrap CSS framework (I prefer to use alternatives so the whole web doesn't look like Bootstrap).
