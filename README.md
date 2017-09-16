@@ -66,7 +66,7 @@ TODO: ANSWER!
 
 ### Exercise 1 - Debugging Async Code
 
-The bug in this code is that it tries to use the results of the two number services immediately (synchronously), but the services are asynchronous, they don't return their values right away. So the results need to handled in the callbacks themselves, after "loading" the numbers. I made a simple fix that involves checking to see if both numbers are ready after each is loaded and conditionally triggering the math, and then I went further to implement a better solution using Promises.
+The bug in this code is that it tries to use the results of the two number services immediately (synchronously), but the services are asynchronous, they don't return their values right away. So the results need to handled in the callbacks themselves, after "loading" the numbers. I made a simple fix that involves checking to see if both numbers are ready after each is loaded and conditionally triggering the math, and then I went further to implement a better solution using Promises. (Note: I am aware of the async/await pattern, and I'm starting to realize we should all move to it, but Promises is what I'm used to for now and it's better than regular callbacks.)
 
 The buggy code provided in the PDF is included at `ex1/remoteMathService-buggy.js`, and my solution code is located at `ex1/remoteMathService-fixed.js` and `ex1/remoteMathService-promises.js`. Mocha unit tests are located at `ex1/test/test.js`. The `ex1` directory is an npm package, just so that it can depend on mocha and have a `test` script for convenience. To run and verify the tests:
 
@@ -118,8 +118,8 @@ I decided to use these tools in my stack because:
 
 I find the above stack to be an elegant and performant solution to the needs of most simple web applications today, perhaps with the addition of some more intense data infrastructure and API technologies at the bottom end of the stack instead of SQLite/Express/Node.
 
-I took the following steps in building this application:
+I took the following steps to build this application:
 
-* [6b09de3](https://github.com/mturley/uxd-exercises/commit/6b09de337e73f5e258836644ab0d1721c91a4b6d): Discarded an initial create-react-app project and used a more modest [redux-minimal](https://redux-minimal.js.org/) template for a React/Redux "Hello World".
+* [6b09de3](https://github.com/mturley/uxd-exercises/commit/6b09de337e73f5e258836644ab0d1721c91a4b6d): Discarded an initial create-react-app project and used a more modest [redux-minimal](https://redux-minimal.js.org/) template for a React/Redux "Hello World". I agree with most of the package decisions made by redux-minimal, but not quite all, and I only want a subset of them. So I'll be messing with this template.
 * [cde2526](https://github.com/mturley/uxd-exercises/commit/cde2526ea9661f2a5cee33b7a21bdbe29c239e6f): Removed some more stuff that we don't really need here that came with redux-minimal, including the Bootstrap CSS framework (I prefer to use alternatives so the whole web doesn't look like Bootstrap).
-* [89530cd](https://github.com/mturley/uxd-exercises/commit/89530cdba2faa972eaf9e1e2417ae925ab9ed6ca): Added the [material-ui](http://www.material-ui.com/) package to provide some app components and the dark material theme.  Also replaced the redux-saga middleware provided by redux-minimal with the simpler redux-thunk middleware.
+* [89530cd](https://github.com/mturley/uxd-exercises/commit/89530cdba2faa972eaf9e1e2417ae925ab9ed6ca): Added the [material-ui](http://www.material-ui.com/) package (A React implementation of Google's Material Design UI spec) to provide some nice app components and the dark material theme. I also replaced the redux-saga middleware provided by redux-minimal with the simpler redux-thunk middleware. (I'm not really a huge fan of ES6 Generators, at least not yet...)
