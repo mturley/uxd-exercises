@@ -117,3 +117,8 @@ I decided to use these tools in my stack because:
 * **npm** comes along with using Node, and it provides a dead-simple `scripts` option in `package.json` for adding build tasks to your Node package without needing the bulk of additional build tools like Gulp, Grunt, or Maven.
 
 I find the above stack to be an elegant and performant solution to the needs of most simple web applications today, perhaps with the addition of some more intense data infrastructure and API technologies at the bottom end of the stack instead of SQLite/Express/Node.
+
+I took the following steps in building this application:
+
+* [6b09de3](https://github.com/mturley/uxd-exercises/commit/6b09de337e73f5e258836644ab0d1721c91a4b6d): Discarded an initial create-react-app project and used a more modest [redux-minimal](https://redux-minimal.js.org/) template for a React/Redux "Hello World".
+* []()
