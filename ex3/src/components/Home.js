@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
+import UsersTable from './UsersTable';
 
-// Home page component
-export default class Home extends React.Component {
-  // render
+export default class Home extends Component {
   render() {
     return (
       <div className="page-home">
-        <AppBar title="Users" />
+        <AppBar title="Users" showMenuIconButton={false} />
+        <UsersTable />
       </div>
     );
   }

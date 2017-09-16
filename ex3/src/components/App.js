@@ -1,15 +1,11 @@
-import React from 'react';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import '../stylesheets/main.scss';
 
-// app component
-export default class App extends React.Component {
-  // render
+export default class App extends Component {
   render() {
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+      <MuiThemeProvider>
         <div className="container">
           {this.props.children}
         </div>
