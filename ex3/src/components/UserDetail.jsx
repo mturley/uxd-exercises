@@ -60,7 +60,7 @@ export class UserDetail extends Component {
               </tr>
               <tr>
                 <td className="field">E-mail:</td>
-                <td className="value">{user.email}</td>
+                <td className="value"><a href={`mailto:${user.email}`}>{user.email}</a></td>
               </tr>
               <tr>
                 <td className="field">Phone:</td>
@@ -68,7 +68,7 @@ export class UserDetail extends Component {
               </tr>
               <tr>
                 <td className="field">Website:</td>
-                <td className="value">{user.website}</td>
+                <td className="value"><a href={user.website} target="_blank">{user.website}</a></td>
               </tr>
             </tbody>
           </table>

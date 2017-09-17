@@ -22,8 +22,10 @@ export class UsersTable extends Component {
   }
 
   componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(loadUsers());
+    const { users, dispatch } = this.props;
+    if (!users.loaded) {
+      dispatch(loadUsers());
+    }
   }
 
   onRowSelection(selection) {
