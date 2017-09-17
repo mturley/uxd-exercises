@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   Table,
   TableBody,
@@ -7,10 +9,12 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
+import { loadUsers } from '../actions/users';
 
-export default class UsersTable extends Component {
+export class UsersTable extends Component {
   componentDidMount() {
-    console.log('Did Mount!', this.props, this.state);
+    const { dispatch } = this.props;
+    dispatch(loadUsers());
   }
 
   render() {
@@ -60,3 +64,13 @@ export default class UsersTable extends Component {
     );
   }
 }
+
+UsersTable.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
+
+const select = state => ({
+  users: state.users,
+});
+
+export default connect(select)(UsersTable);

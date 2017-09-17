@@ -10,6 +10,7 @@ module.exports = {
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
     'babel-polyfill',
+    'whatwg-fetch',
     `${__dirname}/${appRoot}/index.jsx`,
   ],
   output: {

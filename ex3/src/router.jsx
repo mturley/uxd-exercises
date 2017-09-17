@@ -6,7 +6,6 @@ import Home from './components/Home';
 import NotFound from './components/NotFound';
 
 const router = (
-  // eslint-disable-next-line no-undef
   <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />

@@ -1,4 +1,10 @@
 {
   "extends": "airbnb",
-  "parser": "babel-eslint"
+  "parser": "babel-eslint",
+  "globals": {
+    "fetch": false
+  },
+  "env": {
+    "browser": true
+  },
 }
