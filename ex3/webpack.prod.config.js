@@ -14,7 +14,7 @@ module.exports.plugins.push(
     'process.env': {
       NODE_ENV: JSON.stringify('production'),
     },
-  }),
+  })
 );
 
 // compress the js file
@@ -24,7 +24,7 @@ module.exports.plugins.push(
     compressor: {
       warnings: false,
     },
-  }),
+  })
 );
 
 // export css to a separate file
@@ -34,5 +34,5 @@ module.exports.module.loaders[1] = {
 };
 
 module.exports.plugins.push(
-  new ExtractTextPlugin('../css/main.css'),
+  new ExtractTextPlugin('../css/main.css')
 );

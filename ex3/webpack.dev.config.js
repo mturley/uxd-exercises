@@ -10,6 +10,6 @@ module.exports.entry = [
 // export css to a separate file
 module.exports.module.loaders[1] = {
   test: /\.scss$/,
-  loader: ExtractTextPlugin.extract('css!sass'),
+  loader: ExtractTextPlugin.extract('css!sass')
 };
 module.exports.plugins.push(new ExtractTextPlugin('../css/main.css'));

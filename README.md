@@ -101,6 +101,17 @@ I have copied the requirements for this exercise from the PDF to `ex2/REQUIREMEN
 
 The `ex3` subdirectory is an **[npm](https://www.npmjs.com/)** package containing a small web application built with **[React](https://facebook.github.io/react/)** and **[Redux](http://redux.js.org/)**, compiled with **[Babel](https://babeljs.io/)**, bundled with **[webpack](https://webpack.js.org/)** and packaged with **[npm](https://www.npmjs.com/)**.
 
+To install and run the application in development mode, you can run:
+
+```
+cd ex3
+npm install
+npm test     # To run and verify the unit tests
+npm start    # To start the webpack-dev-server on port 8080
+```
+
+And then navigate a browser to http://localhost:8080/. You can also produce a bundle for deployment to a server with `npm run build-prod`. I won't bother with a full production deployment for this exercise, but this code is ready for deployment.
+
 I decided to use these tools in my stack because:
 
 * **React** is reliable, maintainable, declarative, expressive, powerful, easy, and hip right now. I prefer it for my view layer in most projects, although Angular and Vue and many other awesome alternatives are great too. My choice of UI framework will always depend on the project, although I tend to reach for React first these days.
@@ -108,8 +119,6 @@ I decided to use these tools in my stack because:
 * **Babel** enables me to use modern [ES6+](http://es6-features.org/) language features and React's optional [JSX](https://facebook.github.io/react/docs/introducing-jsx.html) element syntax, by transpiling these into plain JavaScript (ES5) for support in all browsers.
 * **webpack** makes for a very convenient deployment artifact, is becoming the standard for modern web app bundling, and provides fancy development tools that I enjoy using.
 * **npm** comes along with using Node, and it provides a dead-simple `scripts` option in `package.json` for adding build tasks to your Node package without needing the bulk of additional build tools like Gulp, Grunt, or Maven.
-
-I find the above stack to be an elegant and performant solution to the front-end needs of most web applications today, perhaps with the addition of some more interesting visualization frameworks.
 
 I took the following steps to build this application:
 
@@ -124,5 +133,4 @@ I took the following steps to build this application:
 * [96bf266](https://github.com/mturley/uxd-exercises/commit/96bf266087a0b7f3b96aac84e97db80be5bfa329): I added the User Detail page with stub contents, and connected it to the routing / selection so you can click back and forth.
 * [22b6bfd](https://github.com/mturley/uxd-exercises/commit/22b6bfdb705fd1e43401333e83d0d629764f06d6): I finished implementing the User Detail page and did some general refactoring and cleanup.
 * [833f873](https://github.com/mturley/uxd-exercises/commit/833f873af8b9df81f73c446f501b3fb077c62ea4): I wrote unit tests for the reducer and action creator, and installed [istanbul](https://istanbul.js.org/) for code coverage reporting.
-
-TODO: Unit tests!  And open ended answers....
+* [4ece421](https://github.com/mturley/uxd-exercises/commit/4ece421bd094f8f30673c662e60b0f68f2b62900): I wrote unit tests for the components and helper functions and fixed a few minor edge cases that came up.
