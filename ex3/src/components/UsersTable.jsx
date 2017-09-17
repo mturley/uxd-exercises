@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 import PropTypes from 'prop-types';
 import {
   Table,
@@ -9,8 +10,8 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import Subheader from 'material-ui/Subheader';
 import { loadUsers } from '../actions/users';
+import userShape from '../shapes/user';
 
 
 const formatAddress = address =>
@@ -40,18 +41,20 @@ export class UsersTable extends Component {
   }
 
   onRowSelection(selection) {
-    const { users } = this.props;
+    const { users, dispatch } = this.props;
     const selectedIndex = selection[0];
     const selectedUser = !users.loaded ? null : users.data[selectedIndex];
-    console.log('selected! ', selectedUser);
+    dispatch(push(`/user/${selectedUser.id}`));
   }
 
   render() {
     const { users } = this.props;
 
     if (!users.loaded) {
-      return <Subheader>Loading...</Subheader>;
+      return <h1>Loading...</h1>;
     }
+
+    const sortedUsers = users.data.slice(0).sort(byLastNameDesc);
 
     return (
       <Table onRowSelection={this.onRowSelection}>
@@ -64,7 +67,7 @@ export class UsersTable extends Component {
           </TableRow>
         </TableHeader>
         <TableBody displayRowCheckbox={false} showRowHover>
-          {users.data.sort(byLastNameDesc).map(user => (
+          {sortedUsers.map(user => (
             <TableRow key={user.id} className="user-row">
               <TableRowColumn>{user.name}</TableRowColumn>
               <TableRowColumn>{user.username}</TableRowColumn>
@@ -81,7 +84,7 @@ export class UsersTable extends Component {
 UsersTable.propTypes = {
   dispatch: PropTypes.func.isRequired,
   users: PropTypes.shape({
-    data: PropTypes.arrayOf(PropTypes.object),
+    data: PropTypes.arrayOf(userShape),
     loading: PropTypes.bool,
     loaded: PropTypes.bool,
     error: PropTypes.object,
