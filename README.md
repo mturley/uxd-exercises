@@ -125,4 +125,5 @@ I took the following steps to build this application:
 * [89530cd](https://github.com/mturley/uxd-exercises/commit/89530cdba2faa972eaf9e1e2417ae925ab9ed6ca): I added the [material-ui](http://www.material-ui.com/) package (A React implementation of Google's Material Design UI spec) to provide some nice page components. I also replaced the redux-saga middleware provided by redux-minimal with the simpler redux-thunk middleware. (I'm not really a huge fan of the ES6 Generators used by redux-saga, at least not yet...)
 * [e8aaf60](https://github.com/mturley/uxd-exercises/commit/e8aaf6058fa3c9e4809346ce9da7db7cbfcb5688): I created a stub UsersTable component with inline rows (no data loaded yet)
 * [232284c](https://github.com/mturley/uxd-exercises/commit/232284c5b802216562272cf6e4ab9db14c1d8d4c): I decided to install [eslint](https://eslint.org/) and use it to enforce the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) because I was a bit frustrated with the lack of consistent style in the redux-minimal template. I might have to send them a PR or two! I also enabled source-maps in this commit.
-* 
+* [df432cf](https://github.com/mturley/uxd-exercises/commit/df432cf2a3f3ba4ef7b7908bd637db1607ac8466): I added a reducer for the state of the Users data and wired up the fetch() request to load it.
+* []()
