@@ -1,6 +1,8 @@
-import { USERS_LOAD,
+import {
+  USERS_LOAD,
   USERS_LOAD_SUCCESS,
-  USERS_LOAD_FAILURE } from '../actions/users';
+  USERS_LOAD_FAILURE,
+} from '../actions/users';
 
 const initialState = {
   data: null,
