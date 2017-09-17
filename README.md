@@ -99,19 +99,12 @@ I have copied the requirements for this exercise from the PDF to `ex2/REQUIREMEN
 
 ### Exercise 3 - Sample Project
 
-The `ex3` subdirectory is an **[npm](https://www.npmjs.com/)** package containing a small web application built with the following stack:
-
-* A Web UI implemented in JavaScript with **[React](https://facebook.github.io/react/)** and **[Redux](http://redux.js.org/)**
-* A REST API implemented in JavaScript with **[Node.js](https://nodejs.org/en/)** and **[Express](https://expressjs.com/)**
-* A **[SQLite](https://www.sqlite.org/)** database
-* Compiled, Bundled and Packaged with **[Babel](https://babeljs.io/)**, **[webpack](https://webpack.js.org/)** and **[npm](https://www.npmjs.com/)**, respectively.
+The `ex3` subdirectory is an **[npm](https://www.npmjs.com/)** package containing a small web application built with **[React](https://facebook.github.io/react/)** and **[Redux](http://redux.js.org/)**, compiled with **[Babel](https://babeljs.io/)**, bundled with **[webpack](https://webpack.js.org/)** and packaged with **[npm](https://www.npmjs.com/)**.
 
 I decided to use these tools in my stack because:
 
 * **React** is reliable, maintainable, declarative, expressive, powerful, easy, and hip right now. I prefer it for my view layer in most projects, although Angular and Vue and many other awesome alternatives are great too. My choice of UI framework will always depend on the project, although I tend to reach for React first these days.
 * **Redux** is a lightweight state container that I discovered recently, and I wish I had found it years ago. It makes everything into a big state machine, and provides a great pattern for connecting React components to a data layer. I use it to manage API requests, data, and application state. The requests themselves are made with [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) (chosen over popular AJAX libraries because it will soon be a web standard, and [polyfilled](https://en.wikipedia.org/wiki/Polyfill) for the browsers that don't support it). I choose to use Redux most of the time because I enjoy its patterns, but [I don't always use it](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367).
-* **Node.js** and **Express** are easy server and framework choices for a quick-and-dirty minimalist webapp backend, they meet the needs of the exercise, and they offer the convenience of writing the whole thing front-to-back in one language.
-* **SQLite** is a small and simple database, good for one-off projects because it stores its data in-place on the disk. SQL in general fits because the data in this exercise is relational. On another project, I might use a different SQL database or a different database entirely. I considered MongoDB for this project for ease of use, but SQLite was a better fit.
 * **Babel** enables me to use modern [ES6+](http://es6-features.org/) language features and React's optional [JSX](https://facebook.github.io/react/docs/introducing-jsx.html) element syntax, by transpiling these into plain JavaScript (ES5) for support in all browsers.
 * **webpack** makes for a very convenient deployment artifact, is becoming the standard for modern web app bundling, and provides fancy development tools that I enjoy using.
 * **npm** comes along with using Node, and it provides a dead-simple `scripts` option in `package.json` for adding build tasks to your Node package without needing the bulk of additional build tools like Gulp, Grunt, or Maven.
@@ -126,4 +119,4 @@ I took the following steps to build this application:
 * [e8aaf60](https://github.com/mturley/uxd-exercises/commit/e8aaf6058fa3c9e4809346ce9da7db7cbfcb5688): I created a stub UsersTable component with inline rows (no data loaded yet)
 * [232284c](https://github.com/mturley/uxd-exercises/commit/232284c5b802216562272cf6e4ab9db14c1d8d4c): I decided to install [eslint](https://eslint.org/) and use it to enforce the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) because I was a bit frustrated with the lack of consistent style in the redux-minimal template. I might have to send them a PR or two! I also enabled source-maps in this commit.
 * [df432cf](https://github.com/mturley/uxd-exercises/commit/df432cf2a3f3ba4ef7b7908bd637db1607ac8466): I added a reducer for the state of the Users data and wired up the fetch() request to load it.
-* []()
+* [9d71fd4](https://github.com/mturley/uxd-exercises/commit/9d71fd4634ace41682491f640c7d8a455b4ceffe): Finished rendering the users table from the loaded JSON data.
