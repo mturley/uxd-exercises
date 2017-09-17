@@ -121,3 +121,4 @@ I took the following steps to build this application:
 * [df432cf](https://github.com/mturley/uxd-exercises/commit/df432cf2a3f3ba4ef7b7908bd637db1607ac8466): I added a reducer for the state of the Users data and wired up the fetch() request to load it.
 * [9d71fd4](https://github.com/mturley/uxd-exercises/commit/9d71fd4634ace41682491f640c7d8a455b4ceffe): I finished rendering the users table from the loaded JSON data.
 * [3c8dfb5](https://github.com/mturley/uxd-exercises/commit/3c8dfb5a9a606783ec94d7a875939f204ef905e6): I added the row selection handler, and made sure the users were sorted properly.
+* [96bf266](https://github.com/mturley/uxd-exercises/commit/96bf266087a0b7f3b96aac84e97db80be5bfa329): I added the User Detail page with stub contents, and connected it to the routing / selection so you can click back and forth.
