@@ -32,7 +32,9 @@ export class UsersTable extends Component {
     const { users, dispatch } = this.props;
     const selectedIndex = selection[0];
     const selectedUser = !users.loaded ? null : users.data[selectedIndex];
-    dispatch(push(`/user/${selectedUser.id}`));
+    if (selectedUser) {
+      dispatch(push(`/user/${selectedUser.id}`));
+    }
   }
 
   render() {

@@ -7,6 +7,9 @@ export const compareByLastNameDesc = (userA, userB) => {
   const compareB = splitB.length === 2 ? splitB[1] : userB.name;
   if (compareA < compareB) return 1;
   if (compareA > compareB) return -1;
+  // If last names are the same, use the whole name
+  if (userA.name < userB.name) return 1;
+  if (userA.name > userB.name) return -1;
   return 0;
 };
 

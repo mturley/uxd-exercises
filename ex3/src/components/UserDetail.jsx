@@ -13,6 +13,7 @@ export class UserDetail extends Component {
   constructor() {
     super();
     this.onBackButtonClick = this.onBackButtonClick.bind(this);
+    this.getSelectedUser = this.getSelectedUser.bind(this);
   }
 
   componentDidMount() {
@@ -26,14 +27,23 @@ export class UserDetail extends Component {
     this.props.dispatch(push('/'));
   }
 
-  render() {
+  getSelectedUser() {
     const { users, routeParams: { id } } = this.props;
+    return users.data.find(u => `${u.id}` === id);
+  }
 
-    if (!users.loaded) {
+  render() {
+    const { users: { loaded } } = this.props;
+
+    if (!loaded) {
       return <h1>Loading...</h1>;
     }
 
-    const user = users.data.find(u => `${u.id}` === id);
+    const user = this.getSelectedUser();
+
+    if (!user) {
+      return <h1>No such user!</h1>;
+    }
 
     return (
       <div>

@@ -25,7 +25,6 @@ const fakeUsers = [
 
 describe('Users action creator', () => {
   it('dispatches correct actions sequence on successful loadUsers call', () => {
-    fetchMock.reset();
     fetchMock.get('*', fakeUsers);
     const store = mockStore({});
     const promise = store.dispatch(loadUsers()).then(() => {
@@ -48,6 +47,21 @@ describe('Users action creator', () => {
       assert.deepEqual(store.getActions(), [
         { type: USERS_LOAD },
         { type: USERS_LOAD_FAILURE, error: { error: 'Oh no!' } },
+      ]);
+    });
+    fetchMock.restore();
+    return promise;
+  });
+
+  it('dispatches correct actions sequence on error during loadUsers call', () => {
+    fetchMock.get('*', {
+      throws: { error: 'Fatal error' },
+    });
+    const store = mockStore({});
+    const promise = store.dispatch(loadUsers()).then(() => {
+      assert.deepEqual(store.getActions(), [
+        { type: USERS_LOAD },
+        { type: USERS_LOAD_FAILURE, error: { error: 'Fatal error' } },
       ]);
     });
     fetchMock.restore();
