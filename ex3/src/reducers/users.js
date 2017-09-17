@@ -39,7 +39,7 @@ const handlers = {
 };
 
 export default function usersReducer(state = initialState, action) {
-  const handler = handlers[action.type];
+  const handler = action && handlers[action.type];
   if (!handler) return state;
   return { ...handler(state, action) };
 }
