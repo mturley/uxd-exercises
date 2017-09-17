@@ -110,7 +110,7 @@ npm test     # To run and verify the unit tests
 npm start    # To start the webpack-dev-server on port 8080
 ```
 
-And then navigate a browser to http://localhost:8080/. You can also produce a bundle for deployment to a server with `npm run build-prod`. I won't bother with a full production deployment for this exercise, but this code is ready for deployment.
+And then navigate a browser to http://localhost:8080/. You can also produce a bundle for deployment to a server with `npm run build-prod`. I won't bother with a full production deployment for this exercise, but this produces code in `ex3/public/` which is ready for deployment on any old web server.
 
 I decided to use these tools in my stack because:
 
