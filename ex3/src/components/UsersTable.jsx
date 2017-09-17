@@ -18,6 +18,10 @@ export class UsersTable extends Component {
   }
 
   render() {
+    const { users } = this.props;
+
+    console.log('users data: ', users);
+
     return (
       <Table>
         <TableHeader>
@@ -67,6 +71,12 @@ export class UsersTable extends Component {
 
 UsersTable.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  users: PropTypes.shape({
+    data: PropTypes.arrayOf(PropTypes.object),
+    loading: PropTypes.bool,
+    loaded: PropTypes.bool,
+    error: PropTypes.object,
+  }).isRequired,
 };
 
 const select = state => ({
