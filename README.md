@@ -109,7 +109,7 @@ I decided to use these tools in my stack because:
 * **webpack** makes for a very convenient deployment artifact, is becoming the standard for modern web app bundling, and provides fancy development tools that I enjoy using.
 * **npm** comes along with using Node, and it provides a dead-simple `scripts` option in `package.json` for adding build tasks to your Node package without needing the bulk of additional build tools like Gulp, Grunt, or Maven.
 
-I find the above stack to be an elegant and performant solution to the needs of most simple web applications today, perhaps with the addition of some more intense data infrastructure and API technologies at the bottom end of the stack instead of SQLite/Express/Node.
+I find the above stack to be an elegant and performant solution to the front-end needs of most web applications today, perhaps with the addition of some more interesting visualization frameworks.
 
 I took the following steps to build this application:
 
@@ -122,3 +122,4 @@ I took the following steps to build this application:
 * [9d71fd4](https://github.com/mturley/uxd-exercises/commit/9d71fd4634ace41682491f640c7d8a455b4ceffe): I finished rendering the users table from the loaded JSON data.
 * [3c8dfb5](https://github.com/mturley/uxd-exercises/commit/3c8dfb5a9a606783ec94d7a875939f204ef905e6): I added the row selection handler, and made sure the users were sorted properly.
 * [96bf266](https://github.com/mturley/uxd-exercises/commit/96bf266087a0b7f3b96aac84e97db80be5bfa329): I added the User Detail page with stub contents, and connected it to the routing / selection so you can click back and forth.
+* [22b6bfd](https://github.com/mturley/uxd-exercises/commit/22b6bfdb705fd1e43401333e83d0d629764f06d6): I finished implementing the User Detail page and did some general refactoring and cleanup.
