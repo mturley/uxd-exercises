@@ -4,6 +4,8 @@ import {
   USERS_LOAD_FAILURE,
 } from '../actions/users';
 
+import { compareByLastNameDesc } from '../helpers';
+
 const initialState = {
   data: null,
   loading: false,
@@ -23,7 +25,7 @@ const handlers = {
 
   [USERS_LOAD_SUCCESS]: (state, action) => ({
     ...state,
-    data: action.data,
+    data: action.data.sort(compareByLastNameDesc), // Store the data pre-sorted
     loading: false,
     loaded: true,
   }),

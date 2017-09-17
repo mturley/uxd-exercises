@@ -10,24 +10,10 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import { loadUsers } from '../actions/users';
 import userShape from '../shapes/user';
+import { loadUsers } from '../actions/users';
+import { formatAddress } from '../helpers';
 
-
-const formatAddress = address =>
-  `${address.street} ${address.suite}, ${address.city}, ${address.zipcode}`;
-
-const byLastNameDesc = (userA, userB) => {
-  // Comparator for sorting users by name, descending
-  // Tries to use the last name if possible by looking after the space
-  const splitA = userA.name.split(' ');
-  const splitB = userB.name.split(' ');
-  const compareA = splitA.length === 2 ? splitA[1] : userA.name;
-  const compareB = splitB.length === 2 ? splitB[1] : userB.name;
-  if (compareA < compareB) return 1;
-  if (compareA > compareB) return -1;
-  return 0;
-};
 
 export class UsersTable extends Component {
   constructor() {
@@ -54,8 +40,6 @@ export class UsersTable extends Component {
       return <h1>Loading...</h1>;
     }
 
-    const sortedUsers = users.data.slice(0).sort(byLastNameDesc);
-
     return (
       <Table onRowSelection={this.onRowSelection}>
         <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
@@ -67,7 +51,7 @@ export class UsersTable extends Component {
           </TableRow>
         </TableHeader>
         <TableBody displayRowCheckbox={false} showRowHover>
-          {sortedUsers.map(user => (
+          {users.data.map(user => (
             <TableRow key={user.id} className="user-row">
               <TableRowColumn>{user.name}</TableRowColumn>
               <TableRowColumn>{user.username}</TableRowColumn>
