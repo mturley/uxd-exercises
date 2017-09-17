@@ -9,7 +9,11 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
+import Subheader from 'material-ui/Subheader';
 import { loadUsers } from '../actions/users';
+
+const formatAddress = address =>
+  `${address.street} ${address.suite}, ${address.city}, ${address.zipcode}`;
 
 export class UsersTable extends Component {
   componentDidMount() {
@@ -20,7 +24,9 @@ export class UsersTable extends Component {
   render() {
     const { users } = this.props;
 
-    console.log('users data: ', users);
+    if (!users.loaded) {
+      return <Subheader>Loading...</Subheader>;
+    }
 
     return (
       <Table>
@@ -33,36 +39,14 @@ export class UsersTable extends Component {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow>
-            <TableRowColumn>John Smith</TableRowColumn>
-            <TableRowColumn>jsmith</TableRowColumn>
-            <TableRowColumn>jsmith@yahoo.com</TableRowColumn>
-            <TableRowColumn>1 Main St, Springfield, MA 12345</TableRowColumn>
-          </TableRow>
-          <TableRow>
-            <TableRowColumn>Randal White</TableRowColumn>
-            <TableRowColumn>rwhite</TableRowColumn>
-            <TableRowColumn>rwhite@yahoo.com</TableRowColumn>
-            <TableRowColumn>1 Main St, Springfield, MA 12345</TableRowColumn>
-          </TableRow>
-          <TableRow>
-            <TableRowColumn>Stephanie Sanders</TableRowColumn>
-            <TableRowColumn>ssanders</TableRowColumn>
-            <TableRowColumn>ssanders@yahoo.com</TableRowColumn>
-            <TableRowColumn>1 Main St, Springfield, MA 12345</TableRowColumn>
-          </TableRow>
-          <TableRow>
-            <TableRowColumn>Steve Brown</TableRowColumn>
-            <TableRowColumn>sbrown</TableRowColumn>
-            <TableRowColumn>sbrown@yahoo.com</TableRowColumn>
-            <TableRowColumn>1 Main St, Springfield, MA 12345</TableRowColumn>
-          </TableRow>
-          <TableRow>
-            <TableRowColumn>Christopher Nolan</TableRowColumn>
-            <TableRowColumn>cnolan</TableRowColumn>
-            <TableRowColumn>cnolan@yahoo.com</TableRowColumn>
-            <TableRowColumn>1 Main St, Springfield, MA 12345</TableRowColumn>
-          </TableRow>
+          {users.data.map(user => (
+            <TableRow key={user.id}>
+              <TableRowColumn>{user.name}</TableRowColumn>
+              <TableRowColumn>{user.username}</TableRowColumn>
+              <TableRowColumn>{user.email}</TableRowColumn>
+              <TableRowColumn>{formatAddress(user.address)}</TableRowColumn>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     );
