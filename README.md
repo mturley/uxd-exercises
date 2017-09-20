@@ -127,9 +127,19 @@ npm test     # To run and verify the unit tests
 npm start    # To start the webpack-dev-server on port 8080
 ```
 
-And then navigate a browser to http://localhost:8080/. You can also produce a bundle for deployment to a server with `npm run build-prod`. I won't bother with a full production deployment for this exercise, but this produces code in `ex3/public/` which is ready for deployment on any old web server.
+And then navigate a browser to http://localhost:8080/. You can also produce a bundle for deployment to a server with `npm run build-prod`.
 
-I decided to use these tools in this project because:
+The ex3 package has been configured to be deployable on Heroku, as well (and could be configured for other kinds of hosts). To run a full production deployment on your own Heroku account, you can (after installing the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)) run:
+
+```
+heroku login
+heroku create some-app-name
+git subtree push --prefix ex3 heroku master
+```
+
+Note that we can't push the whole repo directly to heroku master, because Heroku will expect an application at the repo root. We use `git subtree push` instead to push only the `ex3` directory.
+
+These are the tools in my front-end bundle, and why I chose to use them:
 
 * **React** is reliable, maintainable, declarative, expressive, powerful, easy, and hip right now. I prefer it for my view layer in most projects, although Angular and Vue and many other awesome alternatives are great too. My choice of UI framework will always depend on the project, although I tend to reach for React first these days.
 * **Redux** is a lightweight state container that I discovered recently, and I wish I had found it years ago. It makes everything into a big state machine, and provides a great pattern for connecting React components to a data layer. I use it to manage API requests, data, and application state. The requests themselves are made with [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) (chosen over popular AJAX libraries because it will soon be a web standard, and [polyfilled](https://en.wikipedia.org/wiki/Polyfill) for the browsers that don't support it). I choose to use Redux most of the time because I enjoy its patterns, but [I don't always use it](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367).

@@ -14,7 +14,7 @@
     "lint": "eslint **/{*.js,*.jsx}",
     "test": "npm run lint && nyc -e .jsx --reporter=html mocha test/*-test.js* test/**/*-test.js* --recursive --compilers js:babel-register --require babel-polyfill --require ignore-styles",
     "test-watch": "npm run lint && npm test -- --watch",
-    "clean-public": "node_modules/.bin/rimraf ./public/js && node_modules/.bin/rimraf ./public/css",
+    "clean-public": "rimraf ./public/js && rimraf ./public/css",
     "postinstall": "npm run build-prod",
     "heroku-postbuild": "babel-node publicServer.js"
   },
