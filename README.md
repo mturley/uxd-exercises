@@ -127,9 +127,14 @@ npm test     # To run and verify the unit tests
 npm start    # To start the webpack-dev-server on port 8080
 ```
 
-And then navigate a browser to http://localhost:8080/. You can also produce a bundle for deployment to a server with `npm run build-prod`.
+And then navigate a browser to http://localhost:8080/. You can also produce a production bundle for deployment to a server with:
 
-The ex3 package has been configured to be deployable on Heroku, as well (and could be configured for other kinds of hosts). To run a full production deployment on your own Heroku account, you can (after installing the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)) run:
+```
+npm run build-prod
+node publicServer.js  # Will point a server at the new bundle and open a browser to it.
+```
+
+The ex3 package has been configured to be deployable on Heroku as well (and could be configured for other kinds of hosts). To run a full production deployment on your own Heroku account, you can (after installing the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)) run:
 
 ```
 heroku login
