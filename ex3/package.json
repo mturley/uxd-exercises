@@ -27,7 +27,9 @@
   },
   "author": "Mike Turley",
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.20.0",
+    "clean-webpack-plugin": "^0.1.15",
     "extract-text-webpack-plugin": "^1.0.1",
     "material-ui": "^0.19.1",
     "prop-types": "^15.5.10",
@@ -43,7 +45,6 @@
     "whatwg-fetch": "^2.0.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.21.0",
     "babel-eslint": "^8.0.0",
     "babel-loader": "^6.2.10",
@@ -51,7 +52,6 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-3": "^6.17.0",
     "babel-runtime": "^6.20.0",
-    "clean-webpack-plugin": "^0.1.15",
     "compression": "^1.7.0",
     "css-loader": "^0.26.1",
     "enzyme": "^2.7.0",
