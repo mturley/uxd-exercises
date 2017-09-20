@@ -10,7 +10,7 @@
   "scripts": {
     "start": "webpack-dev-server --inline --hot --history-api-fallback --host localhost --port 8080",
     "build-dev": "webpack --config webpack.dev.config.js",
-    "build-prod": "npm run clean-public && npm run lint && webpack -p --config webpack.prod.config.js",
+    "build-prod": "npm run clean-public && webpack -p --config webpack.prod.config.js",
     "lint": "eslint **/{*.js,*.jsx}",
     "test": "npm run lint && nyc -e .jsx --reporter=html mocha test/*-test.js* test/**/*-test.js* --recursive --compilers js:babel-register --require babel-polyfill --require ignore-styles",
     "test-watch": "npm run lint && npm test -- --watch",
