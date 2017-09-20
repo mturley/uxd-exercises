@@ -1,3 +1,5 @@
 node_modules/
 .nyc_output/
 coverage/
+ex3/public/js/
+ex3/public/css/
