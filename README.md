@@ -79,6 +79,8 @@ I'll start with a concrete, and actually recent, example which I think is the ac
 
 The second, more abstract example I have is that I am proud of every decision I made that led to the opportunities I have encountered. During college I took some time off to work, make some money to more easily afford tuition and grow a little more before I finished my degree. I responded to an ad I found on reddit's /r/forhire community, and that led to a job doing Wordpress websites with a small team in Cambridge. That team grew and took on larger projects, culminating in a contract for a pretty large textbook reading / note-taking application project with publisher partners, that earned me enough money to go back to school. Having this on my resume led me to do well in interviews, get other jobs and eventually an internship at Amazon, which made me look good when interviewing with Hewlett Packard Enterprise, and now I have tons of experience including two huge names in the industry on my resume. I have made a bunch of good decisions, been very lucky, and worked very hard to get to where I am, and I believe the potential I have set myself up for is considerable. That is what I am truly most proud of.
 
+---
+
 ## Practical Exercises
 
 ### Exercise 1 - Debugging Async Code
@@ -116,7 +118,7 @@ I have copied the requirements for this exercise from the PDF to `ex2/REQUIREMEN
 
 ### Exercise 3 - Sample Project
 
-The `ex3` subdirectory is an **[npm](https://www.npmjs.com/)** package containing a small web application built with **[React](https://facebook.github.io/react/)** and **[Redux](http://redux.js.org/)**, compiled with **[Babel](https://babeljs.io/)**, bundled with **[webpack](https://webpack.js.org/)** and packaged with **[npm](https://www.npmjs.com/)**.
+The `ex3` subdirectory is an **[npm](https://www.npmjs.com/)** package containing a small web application built with **[React](https://facebook.github.io/react/)** and **[Redux](http://redux.js.org/)**, compiled with **[Babel](https://babeljs.io/)**, bundled with **[webpack](https://webpack.js.org/)** and packaged with **[npm](https://www.npmjs.com/)**.  A live **[Heroku](https://www.heroku.com/)** deployment of this application is running at http://uxd-ex3.herokuapp.com/.
 
 To install and run the application in development mode, you can run:
 
@@ -141,6 +143,8 @@ heroku login
 heroku create some-app-name
 git subtree push --prefix ex3 heroku master
 ```
+
+When the deployment completes, the application will be accessible at http://some-app-name.herokuapp.com/.
 
 Note that we can't push the whole repo directly to heroku master, because Heroku will expect an application at the repo root. We use `git subtree push` instead to push only the `ex3` directory.
 
