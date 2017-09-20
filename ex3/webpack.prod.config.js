@@ -27,6 +27,8 @@ module.exports.plugins.push(
   })
 );
 
+module.exports.module.loaders[0].loaders = ['babel'];
+
 // export css to a separate file
 module.exports.module.loaders[1] = {
   test: /\.scss$/,
