@@ -171,6 +171,7 @@ I took the following steps to build this application:
 * [22b6bfd](https://github.com/mturley/uxd-exercises/commit/22b6bfdb705fd1e43401333e83d0d629764f06d6): I finished implementing the User Detail page and did some general refactoring and cleanup.
 * [833f873](https://github.com/mturley/uxd-exercises/commit/833f873af8b9df81f73c446f501b3fb077c62ea4): I wrote unit tests for the reducer and action creator, and installed [istanbul](https://istanbul.js.org/) for code coverage reporting.
 * [4ece421](https://github.com/mturley/uxd-exercises/commit/4ece421bd094f8f30673c662e60b0f68f2b62900): I wrote unit tests for the components and helper functions and fixed a few minor edge cases that came up.
+* [2c5e46b](https://github.com/mturley/uxd-exercises/commit/2c5e46bc2dd0c87e67a76da463f665d4133b2f9c): I added a small express server to host the compiled bundle, to support Heroku deployment.
 
 ---
 
