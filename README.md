@@ -141,6 +141,7 @@ The ex3 package has been configured to be deployable on Heroku as well (and coul
 ```
 heroku login
 heroku create some-app-name
+heroku git:remote -a some-app-name
 git subtree push --prefix ex3 heroku master
 ```
 
