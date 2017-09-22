@@ -3,7 +3,7 @@
   This code is copied exactly from the exercises PDF, bugs intact.
   The test failures from this code can be verified by running:
 
-  mocha blah blah TODO replace this with a real command
+  npm test
 
  */
 

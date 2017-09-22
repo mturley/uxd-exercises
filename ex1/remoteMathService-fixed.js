@@ -3,7 +3,7 @@
   This is the code with my changes applied.
   The tests can be verified by running:
 
-  mocha blah blah TODO replace this with a real command
+  npm test
 
  */
 
